@@ -34,6 +34,7 @@ function DeferUntilIdle({ children, fallback }: { children: React.ReactNode; fal
   return <>{children}</>;
 }
 import { CountUp } from "@/components/realtime/CountUp";
+import { AccuracyOverTimeCard } from "@/components/dashboard/AccuracyOverTimeCard";
 import { stripAutoTitle } from "@/lib/strip-auto";
 import {
   ListChecks,
