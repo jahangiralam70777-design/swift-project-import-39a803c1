@@ -164,19 +164,19 @@ function PageHeader() {
   const user = useAppStore((s) => s.user);
   const initial = (user?.name ?? user?.email ?? "U").slice(0, 1).toUpperCase();
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3">
-      <div className="flex items-center gap-3">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--neon-purple)] to-[var(--neon-blue)] text-white shadow-glow">
+    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:flex sm:flex-wrap sm:justify-between">
+      <div className="flex min-w-0 items-center gap-3">
+        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--neon-purple)] to-[var(--neon-blue)] text-white shadow-glow">
           <Activity className="h-5 w-5" />
         </span>
-        <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+        <div className="min-w-0">
+          <h1 className="truncate font-display text-2xl font-bold tracking-tight sm:text-3xl">
             Daily Progress
           </h1>
-          <p className="text-sm text-muted-foreground">Track your learning. Improve every day.</p>
+          <p className="truncate text-sm text-muted-foreground sm:whitespace-normal">Track your learning. Improve every day.</p>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex shrink-0 items-center gap-2 self-center">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[var(--neon-purple)] to-[var(--neon-blue)] text-sm font-bold text-white shadow-glow ring-2 ring-background">
           {initial}
         </div>
